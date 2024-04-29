@@ -13,21 +13,22 @@ int main() {
 	}
 
 	Mat frame;
-	while (true) {
-		cap >> frame; // Lese neues Frame von der Kamera
-		
-		if (frame.empty()) {
-			cerr << "Leeres Frame erhalten" << endl;
-			break;
-		}
-
-		imshow("Webcam", frame); // zeige das Frame in einem Fenster an
-		
-		if (waitKey(1) == 27) break;
+	cap >> frame; // Lese Frame von der Kamera
 	
+	if (frame.empty()) {
+		cerr << "Leeres Frame erhalten" << endl;
+		return -1;
 	}
+	
+	//Speicher das Bild als PNG
+	bool isSaved = imwrite("nice.png", frame);
+	if(!isSaved) {
+		cerr << "Fehler beim speichern des Bildes!" << endl;
+		return -1;
+	}
+	
+	cout << "Bild erfolgreich gespeichert" << endl;
 
 	cap.release();
-	destroyAllWindows();
 	return 0;
 }
