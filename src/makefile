@@ -1,11 +1,21 @@
 CXX=g++
-CXXFLAGS=-std=c++20
+CXXFLAGS=-std=c++11 `pkg-config --cflags opencv4`
+LDFLAGS=`pkg-config --libs opencv4`
 
-all: main
+TARGET=main
+SRCS=main.cpp
+OBJS=$(SRCS:.cpp=.o)
 
-main:
-	$(CXX) $(CXXFLAGS) main.cpp -o main
+all: $(TARGET)
 
+$(TARGET): $(OBJS)
+	$(CXX) -o $@ $^ $(LDFLAGS)
+
+%.o: %.cpp
+	$(CXX) -c $< $(CXXFLAGS)
 
 clean:
 	rm -rf main
+
+
+.PHONY: all clean
