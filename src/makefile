@@ -1,5 +1,5 @@
 CXX=g++
-CXXFLAGS=-std=c++11 `pkg-config --cflags opencv4`
+CXXFLAGS=-std=c++17 `pkg-config --cflags opencv4`
 LDFLAGS=`pkg-config --libs opencv4`
 
 TARGET=main
@@ -15,7 +15,7 @@ $(TARGET): $(OBJS)
 	$(CXX) -c $< $(CXXFLAGS)
 
 clean:
-	rm -rf main
+	rm -rf main main.o
 
 
 .PHONY: all clean
