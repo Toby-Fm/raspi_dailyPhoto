@@ -44,7 +44,8 @@ int main() {
 
 	// Formatierujng von Datum und Uhrzeit für den Datei namen
 	stringstream ss;
-	ss << put_time(localtime(&in_time_t), "%d.%m.%Y_%H:%M:%S");
+	//ss << put_time(localtime(&in_time_t), "%d_%m_%Y_%H_%M_%S");
+	ss << put_time(localtime(&in_time_t), "%d");
 	string fileName = foldername + "/" + ss.str() + ".png";
 
 	//Speicher das Bild als PNG
