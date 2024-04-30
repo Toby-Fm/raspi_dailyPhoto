@@ -21,7 +21,7 @@ int main() {
 	Mat frame;
 	
 	// Countdown für Foto-geschoss
-	cout << "Foto wird gemacht in: \n" << endl;
+	cout << "Foto wird gemacht in:" << endl;
 	for (int i = 5; i > 0; --i) {
 		cout << i << endl;
 		this_thread::sleep_for (chrono::seconds(1));
@@ -44,7 +44,7 @@ int main() {
 
 	// Formatierujng von Datum und Uhrzeit für den Datei namen
 	stringstream ss;
-	ss << put_time(localtime(&in_time_t), "%d.%m.%Y_%H.%M");
+	ss << put_time(localtime(&in_time_t), "%d.%m.%Y_%H:%M:%S");
 	string fileName = foldername + "/" + ss.str() + ".png";
 
 	//Speicher das Bild als PNG
@@ -54,7 +54,9 @@ int main() {
 		return -1;
 	}
 	
-	cout << "Bild erfolgreich gespeichert" << endl;
+	cout << "Bild erfolgreich gespeichert unter: " << fileName << endl;
+	cout << "Filename = Day - Month - Year : Hour - Minute - Second" << endl;
+	
 	cap.release();
 	return 0;
 }
