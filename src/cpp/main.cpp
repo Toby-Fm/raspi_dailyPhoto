@@ -1,4 +1,6 @@
+#include "db.config.hpp"
 #include <opencv2/opencv.hpp>
+
 #include <iostream>
 #include <chrono>
 #include <thread>
@@ -40,22 +42,21 @@ int main() {
 
 	// Hole das aktuelle Datum und die Uhrzeit
 	auto now = chrono::system_clock::now();
-	auto in_time_t = chrono::system_clock::to_time_t(now);
+	time_t in_time_t = chrono::system_clock::to_time_t(now);
 
 	// Formatierujng von Datum und Uhrzeit für den Datei namen
 	stringstream ss;
-	//ss << put_time(localtime(&in_time_t), "%d_%m_%Y_%H_%M_%S");
-	ss << put_time(localtime(&in_time_t), "%d");
-	string fileName = foldername + "/" + ss.str() + ".png";
+	ss << put_time(localtime(&in_time_t), "Warum wird der Name nicht geändert?");
+	string filename = foldername + "/" + ss.str() + ".png";
 
 	//Speicher das Bild als PNG
-	bool isSaved = imwrite(fileName, frame);
+	bool isSaved = imwrite(filename, frame);
 	if(!isSaved) {
 		cerr << "Fehler beim speichern des Bildes!" << endl;
 		return -1;
 	}
 	
-	cout << "Bild erfolgreich gespeichert unter: " << fileName << endl;
+	cout << "Bild erfolgreich gespeichert unter: " << filename << endl;
 	cout << "Filename = Day - Month - Year : Hour - Minute - Second" << endl;
 	
 	cap.release();
