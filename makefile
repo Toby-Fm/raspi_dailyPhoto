@@ -1,6 +1,6 @@
 CXX=g++
 CXXFLAGS=-std=c++17 `pkg-config --cflags opencv4`
-LDFLAGS=`pkg-config --libs opencv4`
+LDFLAGS=`pkg-config --libs opencv4` `mysql_config --cflags --libs`
 
 TARGET=main
 SRC_DIR=src/cpp
@@ -12,7 +12,7 @@ all: $(TARGET)
 $(TARGET): $(OBJS)
 	$(CXX) -o $@ $^ $(LDFLAGS)
 
-$(SRC_DIR)%.o: $(SRC_DIR)/%.cpp
+$(SRC_DIR)%.o: $(SRC_DIR)/%.cp
 	$(CXX) -c $< -o $@ $(CXXFLAGS)
 
 clean:
