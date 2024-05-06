@@ -41,14 +41,14 @@ int main() {
 	fs::create_directories(foldername);
 
 	// Hole das aktuelle Datum und die Uhrzeit
-	auto now = chrono::system_clock::now();
-	time_t in_time_t = chrono::system_clock::to_time_t(now);
+	//auto now = chrono::system_clock::now();
+	//time_t in_time_t = chrono::system_clock::to_time_t(now);
 
 	// Formatierujng von Datum und Uhrzeit für den Datei namen
-	stringstream ss;
-	ss << put_time(localtime(&in_time_t), "Warum wird der Name nicht geändert?");
-	string filename = foldername + "/" + ss.str() + ".png";
-
+	//stringstream ss;
+	//ss << put_time(localtime(&in_time_t), "%d-%m-%Y_%H-%M-%S");
+	//string filename = foldername + "/" + ss.str() + ".png";
+  string filename = "Hello";
 	//Speicher das Bild als PNG
 	bool isSaved = imwrite(filename, frame);
 	if(!isSaved) {

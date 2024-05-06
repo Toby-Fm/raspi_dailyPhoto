@@ -1,3 +1,4 @@
 main
 /img/*
 db.config.hpp
+*.o
