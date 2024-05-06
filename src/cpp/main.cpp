@@ -1,6 +1,6 @@
-#include "db.config.hpp"
-#include <opencv2/opencv.hpp>
+#include "main.hpp"
 
+#include <opencv2/opencv.hpp>
 #include <iostream>
 #include <chrono>
 #include <thread>
@@ -13,6 +13,9 @@ using namespace std;
 namespace fs = std::filesystem;
 
 int main() {
+	connect(); // Baut eine Verbindung zur Datenbank auf
+	//std::cout << "Datenbank IP: " << server << std::endl;
+
 	VideoCapture cap(0); //Öffne die erste angeschlossene Kamera
 
 	if (!cap.isOpened()) {
@@ -20,8 +23,6 @@ int main() {
 		return -1;
 	}
 
-	Mat frame;
-	
 	// Countdown für Foto-geschoss
 	cout << "Foto wird gemacht in:" << endl;
 	for (int i = 5; i > 0; --i) {
@@ -29,7 +30,8 @@ int main() {
 		this_thread::sleep_for (chrono::seconds(1));
 	}
 	cout << "\nFoto wird gemacht\n" << endl;
-
+    
+    Mat frame;
 	cap >> frame; // Lese Frame von der Kamera
 	if (frame.empty()) {
 		cerr << "Leeres Frame erhalten" << endl;
@@ -41,16 +43,24 @@ int main() {
 	fs::create_directories(foldername);
 
 	// Hole das aktuelle Datum und die Uhrzeit
+    std::cout << "Hole das aktuelle Datum und die Uhrzeit\n" << std::endl;
 	auto now = chrono::system_clock::now();
 	time_t in_time_t = chrono::system_clock::to_time_t(now);
 
 	// Formatierujng von Datum und Uhrzeit für den Datei namen
-	stringstream ss;
+    std::cout << "Formatiere Datum und Uhrzeit für Dateiname\n" << std::endl;
+    stringstream ss;
 	ss << put_time(localtime(&in_time_t), "%d-%m-%Y_%H-%M");
-	string filename = foldername + "/" + ss.str() + ".png";
-  //string filename = "Hello";
+	filename = foldername + "/" + ss.str() + ".png";
+    /*
+    // Lade das Bild in die Datenbank Hoch
+    std::cout << "Bild wird hochgeladen...\n" << std::endl;
+    upload();
+    */
+
 	//Speicher das Bild als PNG
-	bool isSaved = imwrite(filename, frame);
+    std::cout << "Speichere das Bild\n" << std::endl;
+    bool isSaved = imwrite(filename, frame);
 	if(!isSaved) {
 		cerr << "Fehler beim speichern des Bildes!" << endl;
 		return -1;
@@ -59,6 +69,13 @@ int main() {
 	cout << "Bild erfolgreich gespeichert unter: " << filename << endl;
 	cout << "Filename = Day - Month - Year : Hour - Minute" << endl;
 	
+    //Ändere Dateiname für die Datenbank
+    //std::cout << "Ändere Dateiname für die Datenbank\n" << std::endl;
+    filename = ss.str() + ".png";
+    // Lade das Bild in die Datenbank hoch 
+    std::cout << "Bild wird hochgeladen...\n" << std::endl;
+    upload();
+
 	cap.release();
 	return 0;
 }
