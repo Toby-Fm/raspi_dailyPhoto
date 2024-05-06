@@ -22,12 +22,13 @@ void connect() {
 }
 
 void upload() {
-    std::ifstream file(filename, std::ios::binary | std::ios::ate);
-    std::streamsize size = file.tellg();
+    std::ifstream file("img/" + filename, std::ios::binary | std::ios::ate);
+    auto size = file.tellg();
+    std::cout << "Dateigröße: " << size << "Bytes" <<std::endl;
     file.seekg(0, std::ios::beg);
     
     // Vector ist der Fehler, Bild ist Größer als 'MAX_SIZE'
-    std::cout << "Dateigröße: " << size << std::endl;
+    //std::cout << "Dateigröße: " << size << std::endl;
     std::vector<char>buffer(size);
     
     if (file.read(buffer.data(), size)) {
