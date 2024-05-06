@@ -3,7 +3,8 @@ CXXFLAGS=-std=c++17 `pkg-config --cflags opencv4`
 LDFLAGS=`pkg-config --libs opencv4`
 
 TARGET=main
-SRCS=src/cpp/main.cpp
+SRC_DIR=src/cpp
+SRCS=$(SRC_DIR)/main.cpp
 OBJS=$(SRCS:.cpp=.o)
 
 all: $(TARGET)
@@ -11,11 +12,11 @@ all: $(TARGET)
 $(TARGET): $(OBJS)
 	$(CXX) -o $@ $^ $(LDFLAGS)
 
-%.o: %.cpp
-	$(CXX) -c $< $(CXXFLAGS)
+$(SRC_DIR)%.o: $(SRC_DIR)/%.cpp
+	$(CXX) -c $< -o $@ $(CXXFLAGS)
 
 clean:
-	rm -rf main main.o
+	rm -rf main src/cpp/main.o
 
 
 .PHONY: all clean
