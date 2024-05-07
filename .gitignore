@@ -1,4 +1,5 @@
-main
-/img/*
+/raspi/main
+/raspi/img/*
 db.config.hpp
 *.o
+*.png

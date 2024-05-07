@@ -52,11 +52,6 @@ int main() {
     stringstream ss;
 	ss << put_time(localtime(&in_time_t), "%d-%m-%Y_%H-%M");
 	filename = foldername + "/" + ss.str() + ".png";
-    /*
-    // Lade das Bild in die Datenbank Hoch
-    std::cout << "Bild wird hochgeladen...\n" << std::endl;
-    upload();
-    */
 
 	//Speicher das Bild als PNG
     std::cout << "Speichere das Bild\n" << std::endl;
@@ -66,11 +61,11 @@ int main() {
 		return -1;
 	}
 	
-	cout << "Bild erfolgreich gespeichert unter: " << filename << endl;
-	cout << "Filename = Day - Month - Year : Hour - Minute" << endl;
+    std::cout << "Bild erfolgreich gespeichert unter: " << filename << endl;
+    std::cout << "Filename = Day - Month - Year : Hour - Minute" << endl;
 	
     //Ändere Dateiname für die Datenbank
-    //std::cout << "Ändere Dateiname für die Datenbank\n" << std::endl;
+    std::cout << "Ändere Dateiname für die Datenbank\n" << std::endl;
     filename = ss.str() + ".png";
     // Lade das Bild in die Datenbank hoch 
     std::cout << "Bild wird hochgeladen...\n" << std::endl;
