@@ -1,4 +1,4 @@
-[![wakatime](https://wakatime.com/badge/user/018dc353-a556-4a78-9feb-f5414f04187a/project/b7c71912-ed84-4618-a95c-9226fecd3eb5.svg)](https://wakatime.com/badge/user/018dc353-a556-4a78-9feb-f5414f04187a/project/b7c71912-ed84-4618-a95c-9226fecd3eb5)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/Toby-Fm/raspi_dailyPhoto/blob/main/LICENSE)
 
 # 🪴 Pflanzenwachstum-Tracker
 
