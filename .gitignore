@@ -1,5 +1,8 @@
-/raspi/main
-/raspi/img/*
+raspi/main
+raspi/img/*
 db.config.hpp
 *.o
 *.png
+website/src/scss/*.scss
+website/src/scss/*.map
+website/src/php
