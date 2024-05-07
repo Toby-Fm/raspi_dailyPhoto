@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "Tahoma";
+  src: url("../assets/fonts/tahoma.ttf") format("truetype");
+}
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Tahoma", sans-serif;
+}
+
+body {
+  background: #161a21;
+  color: #6e8b3d;
+}/*# sourceMappingURL=index.css.map */
