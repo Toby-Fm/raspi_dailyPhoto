@@ -19,20 +19,24 @@ echo "Verbindung Erfolgreich<br><br>";
     </head>
     <body>
         <?php 
-        echo $server, "<br>", $user, "<br>", $database, "<br><br>";
-        echo "<h1>Willkommen<br></h1>";
+        //echo $server, "<br>", $user, "<br>", $database, "<br><br>";
+        echo "<h1>Willkommen<br><br></h1>";
 
+        // SQL Abfrage, um Daten aus der Tabelle "Bilder" zu holen
         $erg = $conn->query("SELECT id, bild, bildname FROM bilder");
-        if ($erg === false) {
-            echo "Fehler: " . $conn->error;
+        if ($erg === false) { // Überprüfen, ob die Abfrage erfolgreich war
+            echo "Fehler: " . $conn->error; // Fehlermeldung ausgeben falls nicht
         } else {
-            while($row = $erg->fetch_assoc()) {
+            while($row = $erg->fetch_assoc()) { // Schleife über jedes Ergebnis der Abfrage
+                // Ausgabe der ID des Bildes
                 echo "ID: " . $row['id'] . "<br>";
                 if ($row['bild']) {
                     // Die Bilddaten werden in Base64 umgewandelt und direkt im <img>-Tag eingefügt
                     $base64 = 'data:image/png;base64,' . base64_encode($row['bild']);
+                    // Einfügen des Bildes als <img> Element
                     echo "<img src='" . $base64 . "' alt='" . htmlspecialchars($row['bildname']) . "'><br><br>";
                 }
+                // Ausgabe des Bildnamens
                 echo "Bildname: " . $row['bildname'] . "<br><br>";
             }
         }
