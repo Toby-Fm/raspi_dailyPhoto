@@ -1,7 +1,7 @@
 const openButtons = document.getElementsByClassName("open");
-const modal = document.getElementById("myModal");
+const modal = document.getElementById("myWindow");
 const modalImg = document.getElementById("img01");
-const captionText = document.getElementById("caption");
+const captionText = document.getElementById("window-bildname");
 const closeModal = document.getElementsByClassName("close")[0];
 
 for (let i = 0; i < openButtons.length; i++) {
