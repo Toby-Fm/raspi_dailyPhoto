@@ -42,7 +42,7 @@ if ($conn->connect_error) {
                         // Ausgabe des Bildnamens
                         echo "Bildname: " . $row['bildname'] . "<br><br>";
                     }
-                }*/
+                } */
                 while($row = $erg->fetch_assoc()) { // Schleife über jedes Ergebnis der Abfrage
                     // Ausgabe der ID des Bildes
                     //echo "ID: " . $row['id'] . "<br>";
@@ -52,15 +52,22 @@ if ($conn->connect_error) {
                         
                         // Erzeugt immer eine neue "Image-box", wenn es neues Bild in der DB ist. 
                         echo "<div class='image-box'>";
-                                // Bildnamen in span element packen
-                                echo "<span>" . $row['bildname'] . "</span>"; 
-                                // Einfügen des Bildes als <img> Element
-                                echo "<img class='img' src='" . $base64 . "' alt='" . htmlspecialchars($row['bildname']) . "'>";
+                            // Einfügen des Bildes als <img> Element
+                            echo "<img class='img' src='" . $base64 . "' alt='" . htmlspecialchars($row['bildname']) . "'>";
+                            // Bildnamen in span element packen
+                            echo "<span>" . $row['bildname'] . "</span>"; 
+                            // Möglichkeit bild in fullscreen zu öffnen
+                            echo "<div class='fullscreen'>";
+                                // Öffnet das Bild in fullscreen
+                                echo "<button class='open'>";
+                                    echo "<img src='./src/assets/svg/fullscreen_open.svg'>";
+                                echo "</button>";
+                            echo "</div>";
                         echo "</div>";
                     }
-                    // Ausgabe des Bildnamens
-                }
+                } 
             ?>
         </div>
+        <script type="text/javascript" src="./src/js/index.js"></script>
     </body>
 </html>
