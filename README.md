@@ -10,11 +10,11 @@ Der Raspberry Pi ist mit einer Webcam verbunden, die so positioniert ist, dass s
 
 Zusätzlich zu dem C++-Programm, wurde eine Webseite in PHP entwickelt, die die Bilder aus der Datenbank abholt und auf der Webseite präsentiert. Diese Webseite ermöglicht es, die Entwicklung und das Wachstum der Pflanze über die Zeit visuell nachzuvollziehen.
 
-Die Website ist inklusive, sie holt die Bilder aus der Datenbank und zeigt sie auf der Seite an.
+Die Website ist inklusive.
 
 ## ⌨️ Webseite
 
-Die Website wird auf einem konfigurierten nginx-Server betrieben, der in diesem Projekt nicht enthalten ist. Daher wird auch eine Datenbank verwendet, um die Bilder abzurufen und darzustellen. Obwohl die Datenbank nicht unbedingt erforderlich ist, da die Bilder auch in einem "img"-Ordner gespeichert werden, ermöglicht sie eine einfache Abrufung der Bilder aus dem Ordner.
+Die Website wird auf einem konfigurierten nginx-Server betrieben, `der in diesem Projekt nicht enthalten ist`. Daher wird auch eine Datenbank verwendet, um die Bilder abzurufen und darzustellen. Obwohl die Datenbank nicht unbedingt erforderlich ist, da die Bilder auch in einem "img"-Ordner gespeichert werden, ermöglicht sie eine einfache Abrufung der Bilder aus dem Ordner.
 
 ## 💻 Hardware-Anforderungen
 
@@ -28,5 +28,4 @@ Die Website wird auf einem konfigurierten nginx-Server betrieben, der in diesem 
 -   Raspberry Pi OS oder eine vergleichbare Linux-Distribution
 -   C++ Entwicklungsumgebung (g++, Make)
 -   OpenCV-Bibliothek zur Bildaufnahme und -verarbeitung
-
-##
+-   C++ MySQL Bibliotheken für die Verbindung zur Datenbank
