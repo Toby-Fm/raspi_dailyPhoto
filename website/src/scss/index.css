@@ -11,6 +11,50 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: #161a21;
   color: #6e8b3d;
+  overflow: auto;
+}
+
+.header {
+  background-color: #222;
+  text-align: center;
+  width: 100%;
+  color: white;
+  border: 2px solid green;
+}
+
+.gallery {
+  display: grid;
+  place-items: center;
+  place-content: center;
+  padding: 10px;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  width: 100%;
+  gap: 10px;
+  border: 2px solid green;
+}
+.gallery .image-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid white;
+}
+.gallery .image-box span {
+  color: white;
+  margin-bottom: 5px;
+}
+.gallery .image-box .img {
+  width: 100%;
+}
+.gallery .image-box:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+  transition: transform 1s;
 }/*# sourceMappingURL=index.css.map */
