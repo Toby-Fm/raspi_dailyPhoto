@@ -86,28 +86,38 @@ body {
   width: 80%;
 }
 
-.window {
+#blurW {
+  display: none;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+#blurW .window {
   display: none;
   position: absolute;
   place-content: center;
   place-items: center;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   width: 100vw;
   height: 100vh;
   overflow: auto;
   background-color: transparent;
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
   transform: scale(0);
   opacity: 0;
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
-.window.show {
+#blurW .window.show {
   transform: scale(1);
   opacity: 1;
 }
-.window .window-content {
+#blurW .window .window-content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -121,34 +131,34 @@ body {
   overflow: hidden;
   gap: 30px;
 }
-.window .window-content .window-image {
+#blurW .window .window-content .window-image {
   position: relative;
   width: 90%;
   border-radius: 8px;
 }
-.window .window-content #window-bildname {
+#blurW .window .window-content #window-bildname {
   font-size: 2vw;
   color: white;
   margin-bottom: 5px;
 }
-.window .window-content .fullscreen {
+#blurW .window .window-content .fullscreen {
   display: flex;
   justify-content: end;
   align-items: center;
   width: 90%;
 }
-.window .window-content .fullscreen .close {
+#blurW .window .window-content .fullscreen .close {
   border: none;
   height: 50px;
   width: 50px;
   background-color: transparent;
   transition: all ease-in-out 0.2s;
 }
-.window .window-content .fullscreen .close:hover {
+#blurW .window .window-content .fullscreen .close:hover {
   cursor: pointer;
   transform: scale(0.9);
 }
-.window .window-content .fullscreen .close img {
+#blurW .window .window-content .fullscreen .close img {
   height: 100%;
   width: 100%;
 }

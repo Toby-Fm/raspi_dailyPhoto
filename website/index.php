@@ -52,14 +52,16 @@ if ($conn->connect_error) {
                 } 
             ?>
         </div>
-        <div id="myWindow" class="window">
-            <div class="window-content">
-                <img class="window-image" id="img01">
-                <span id="window-bildname"></span>
-                <div class="fullscreen">
-                    <button class='close'>
-                        <img src='./src/assets/svg/fullscreen_exit.svg'>
-                    </button>
+        <div id="blurW">
+            <div id="myWindow" class="window">
+                <div class="window-content">
+                    <img class="window-image" id="img01">
+                    <span id="window-bildname"></span>
+                    <div class="fullscreen">
+                        <button class='close'>
+                            <img src='./src/assets/svg/fullscreen_exit.svg'>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
