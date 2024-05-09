@@ -7,3 +7,4 @@ website/src/scss/*.scss
 website/src/scss/*.map
 website/src/php/db.config.php
 website/src/scss/_variablen.scss
+raspi/src/cpp/db.config.hpp
