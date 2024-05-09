@@ -5,4 +5,5 @@ db.config.hpp
 *.png
 website/src/scss/*.scss
 website/src/scss/*.map
-website/src/php
+website/src/php/db.config.php
+website/src/scss/_variablen.scss
