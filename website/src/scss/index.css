@@ -65,25 +65,40 @@ body {
   width: 100%;
   border-radius: 8px;
 }
-.gallery .image-box .fullscreen {
+.gallery .image-box .buttons {
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
 }
-.gallery .image-box .fullscreen .open {
+.gallery .image-box .buttons .open {
   border: none;
   height: 50px;
   width: 50px;
   background-color: transparent;
   transition: all ease-in-out 0.2s;
 }
-.gallery .image-box .fullscreen .open:hover {
+.gallery .image-box .buttons .open:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
-.gallery .image-box .fullscreen .open img {
+.gallery .image-box .buttons .open img {
   width: 80%;
+}
+.gallery .image-box .buttons .download {
+  border: none;
+  height: 50px;
+  width: 50px;
+  background-color: transparent;
+  transition: all ease-in-out 0.2s;
+}
+.gallery .image-box .buttons .download:hover {
+  cursor: pointer;
+  transform: scale(0.9);
+}
+.gallery .image-box .buttons .download img {
+  height: 100%;
+  width: 100%;
 }
 
 #blurW {
@@ -141,24 +156,24 @@ body {
   color: white;
   margin-bottom: 5px;
 }
-#blurW .window .window-content .fullscreen {
+#blurW .window .window-content .buttons {
   display: flex;
   justify-content: end;
   align-items: center;
   width: 90%;
 }
-#blurW .window .window-content .fullscreen .close {
+#blurW .window .window-content .buttons .close {
   border: none;
   height: 50px;
   width: 50px;
   background-color: transparent;
   transition: all ease-in-out 0.2s;
 }
-#blurW .window .window-content .fullscreen .close:hover {
+#blurW .window .window-content .buttons .close:hover {
   cursor: pointer;
   transform: scale(0.9);
 }
-#blurW .window .window-content .fullscreen .close img {
+#blurW .window .window-content .buttons .close img {
   height: 100%;
   width: 100%;
 }

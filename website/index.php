@@ -41,11 +41,17 @@ if ($conn->connect_error) {
                             // Bildnamen in span element packen
                             echo "<span>" . $row['bildname'] . "</span>"; 
                             // Möglichkeit bild in fullscreen zu öffnen
-                            echo "<div class='fullscreen'>";
+                            echo "<div class='buttons'>";
+                                // Download Image
+                                echo "<button class='download'>"
+                                        . "<a href='" . $base64 . "' download='" . $row['bildname'] . "'>"
+                                            . "<img src='./src/assets/svg/download.svg'>"
+                                        . "</a>"
+                                    . "</button>";
                                 // Öffnet das Bild in fullscreen
-                                echo "<button class='open'>";
-                                    echo "<img src='./src/assets/svg/fullscreen_open.svg'>";
-                                echo "</button>";
+                                echo "<button class='open'>"
+                                        . "<img src='./src/assets/svg/fullscreen_open.svg'>"
+                                   . "</button>";
                             echo "</div>";
                         echo "</div>";
                     }
@@ -57,7 +63,7 @@ if ($conn->connect_error) {
                 <div class="window-content">
                     <img class="window-image" id="img01">
                     <span id="window-bildname"></span>
-                    <div class="fullscreen">
+                    <div class="buttons">
                         <button class='close'>
                             <img src='./src/assets/svg/fullscreen_exit.svg'>
                         </button>
