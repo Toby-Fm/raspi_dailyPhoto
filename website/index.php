@@ -53,11 +53,15 @@ if ($conn->connect_error) {
             ?>
         </div>
         <div id="myWindow" class="window">
-            <img class="window-content" id="img01">
-            <div id="window-bildname"></div>
-            <button class='close'>
-                <img src='./src/assets/svg/fullscreen_exit.svg'>
-            </button>
+            <div class="window-content">
+                <img class="window-image" id="img01">
+                <span id="window-bildname"></span>
+                <div class="fullscreen">
+                    <button class='close'>
+                        <img src='./src/assets/svg/fullscreen_exit.svg'>
+                    </button>
+                </div>
+            </div>
         </div>
         <script type="text/javascript" src="./src/js/index.js"></script>
     </body>
