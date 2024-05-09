@@ -15,14 +15,19 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #161a21;
+  background-color: #333333;
   color: #6e8b3d;
   overflow: auto;
+  gap: 5px;
 }
 
 .header {
-  background-color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #222;
   text-align: center;
+  height: 60px;
   width: 100%;
   color: white;
   border: 2px solid green;
@@ -37,14 +42,20 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   width: 100%;
   gap: 10px;
-  border: 2px solid green;
 }
 .gallery .image-box {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid white;
+  background-color: #222;
+  border: 2px solid #222;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 0px #00ff00;
+  transition: all ease-in-out 0.2s;
+}
+.gallery .image-box:hover {
+  box-shadow: 0 0 10px 0px #ffffff;
 }
 .gallery .image-box span {
   color: white;
@@ -52,9 +63,99 @@ body {
 }
 .gallery .image-box .img {
   width: 100%;
+  border-radius: 8px;
 }
-.gallery .image-box:hover {
+.gallery .image-box .fullscreen {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+}
+.gallery .image-box .fullscreen .open {
+  border: none;
+  height: 50px;
+  width: 50px;
+  background-color: transparent;
+  transition: all ease-in-out 0.2s;
+}
+.gallery .image-box .fullscreen .open:hover {
   cursor: pointer;
-  transform: scale(1.02);
-  transition: transform 1s;
+  transform: scale(1.1);
+}
+.gallery .image-box .fullscreen .open img {
+  width: 80%;
+}
+
+.window {
+  display: none;
+  position: absolute;
+  place-content: center;
+  place-items: center;
+  z-index: 1;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: transparent;
+  border: 2px solid #0000ff;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.window.show {
+  transform: scale(1);
+  opacity: 1;
+}
+.window .window-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+  width: 40%;
+  background-color: #222;
+  border: 2px solid #222;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 0px #00ff00;
+  overflow: hidden;
+  gap: 30px;
+}
+.window .window-content .window-image {
+  position: relative;
+  width: 90%;
+  border-radius: 8px;
+}
+.window .window-content #window-bildname {
+  font-size: 2vw;
+  color: white;
+  margin-bottom: 5px;
+}
+.window .window-content .fullscreen {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 90%;
+}
+.window .window-content .fullscreen .close {
+  border: none;
+  height: 50px;
+  width: 50px;
+  background-color: transparent;
+  transition: all ease-in-out 0.2s;
+}
+.window .window-content .fullscreen .close:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.window .window-content .fullscreen .close img {
+  height: 100%;
+  width: 100%;
+}
+
+@media screen and (max-width: 224px) {
+  .img {
+    width: 100%;
+  }
 }/*# sourceMappingURL=index.css.map */
