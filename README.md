@@ -18,7 +18,7 @@ Die Website wird auf einem konfigurierten nginx-Server betrieben, `der in diesem
 
 ## 💻 Hardware-Anforderungen
 
--   Raspberry Pi 5 _(Getestet nur auf Raspberry 5)_
+-   Raspberry Pi 4 & 5 _(Getestet nur auf Raspberry 4 & 5 x 4gb 64Bit)_
 -   Kompatible USB-Webcam
 -   SD-Karte mit Raspberry Pi OS-64Bit installiert
 -   Stromversorgung für den Raspberry Pi
