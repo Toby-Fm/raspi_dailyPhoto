@@ -12,20 +12,23 @@ Zusätzlich zu dem C++-Programm, wurde eine Webseite in PHP entwickelt, die die 
 
 Die Website ist inklusive.
 
-## ⌨️ Webseite
+## ⌨️  Webseite
 
 Die Website wird auf einem konfigurierten nginx-Server betrieben, `der in diesem Projekt nicht enthalten ist`. Daher wird auch eine Datenbank verwendet, um die Bilder abzurufen und darzustellen. Obwohl die Datenbank nicht unbedingt erforderlich ist, da die Bilder auch in einem "img"-Ordner gespeichert werden, ermöglicht sie eine einfache Abrufung der Bilder aus dem Ordner.
 
 ## 💻 Hardware-Anforderungen
 
--   Raspberry Pi 4 & 5 _(Getestet nur auf Raspberry 4 & 5 x 4gb 64Bit)_
+-   Raspberry Pi 4 & 5 _(Getestet nur auf Raspberry 4 & 5 x 4gb 64Bit)
 -   Kompatible USB-Webcam
 -   SD-Karte mit Raspberry Pi OS-64Bit installiert
 -   Stromversorgung für den Raspberry Pi
 
 ## 💻 Software-Anforderungen
 
--   Raspberry Pi OS oder eine vergleichbare Linux-Distribution
--   C++ Entwicklungsumgebung (g++, Make)
+-   Debian / Ubuntu (Getestet nur auf Debian 12)
+-   C++ Entwicklungsumgebung (g++, Make usw.)
 -   OpenCV-Bibliothek zur Bildaufnahme und -verarbeitung
 -   C++ MySQL Bibliotheken für die Verbindung zur Datenbank
+
+## 🔮 Zukunft
+Zukünftig steht noch an, den PHP Teil in Go nochmal neu zu machen, um direkt eine Webserver mit bereit zu stellen.
